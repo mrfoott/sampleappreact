@@ -5,22 +5,23 @@ on:
     branches: [ master ]
 
 jobs:
-  test:
+  test-project:
     runs-on: self-hosted
     steps:
       - name: Test project
         run: |
           export RUNNER_ALLOW_RUNASROOT="1"
-          echo: "Testing"
+          echo "Testing"
           sleep 5
-          echo: "Passed"
+          echo "Passed"
 
-  cd:
+  cd-project:
     runs-on: self-hosted
     steps:
       - name: Continuous Delivery
         run: |
           export RUNNER_ALLOW_RUNASROOT="1"
+          echo "Getting content"
           git fetch
           git pull
           npm run build
