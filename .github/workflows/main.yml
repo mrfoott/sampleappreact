@@ -21,6 +21,7 @@ jobs:
       - name: Continuous Delivery
         run: |
           export RUNNER_ALLOW_RUNASROOT="1"
+          cd /root/actions-runner/_work/sampleappreact/sampleappreact
           echo "Getting content"
           git fetch
           git pull
