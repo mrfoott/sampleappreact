@@ -1,0 +1,9 @@
+name: CI-CD
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  test:
+    runs-on: self-hosted
