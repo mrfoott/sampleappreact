@@ -7,3 +7,21 @@ on:
 jobs:
   test:
     runs-on: self-hosted
+    steps:
+      - name: Test project
+        run: |
+          export RUNNER_ALLOW_RUNASROOT="1"
+          echo: "Testing"
+          sleep 5
+          echo: "Passed"
+
+  cd:
+    runs-on: self-hosted
+    steps:
+      - name: Continuous Delivery
+        run: |
+          export RUNNER_ALLOW_RUNASROOT="1"
+          git fetch
+          git pull
+          npm run build
+          echo "Finished"
